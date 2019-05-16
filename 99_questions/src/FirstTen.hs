@@ -1,3 +1,5 @@
+module FirstTen  where
+
 -- Question 1
 myLast :: [a] -> a
 myLast []     = error "Empty list, you swine!"
