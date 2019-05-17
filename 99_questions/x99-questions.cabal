@@ -16,17 +16,19 @@ extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     FirstTen
+  exposed-modules:     FirstTen,
+                       SecondTen
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.9 && <4.10
   hs-source-dirs:      src
   default-language:    Haskell2010
 
-Test-Suite FirstTen
+Test-Suite TheTests
     type:       exitcode-stdio-1.0
-    main-is:    test/FirstTenTest.hs
+    main-is:    Spec.hs
+    hs-source-dirs: test
     build-depends: base >= 4 && < 5,
-                   x99-questions > 0,
-                   tasty,
-                   tasty-hunit
+                   x99-questions > 0
+                   , hspec
+                   , hspec-discover
