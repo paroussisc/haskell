@@ -1,9 +1,10 @@
 module SecondTenSpec where
 
-import Test.Hspec
+import           SecondTen
+import           Test.Hspec
 
 spec :: Spec
 spec = do
-  describe "Placeholder" $ do
-    it "Placeholder" $ do
-      (2*1) `shouldBe` (2)
+  describe "Question 11" $ do
+    it "Modified encoder..." $ do
+      ([Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']) == (encodeModified "aaaabccaadeeee")
