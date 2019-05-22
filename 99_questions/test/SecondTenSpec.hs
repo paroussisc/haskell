@@ -14,3 +14,6 @@ spec = do
   describe "Question 13" $ do
     it "Encode directly..." $ do
       ([Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']) == (encodeDirect "aaaabccaadeeee")
+  describe "Question 14" $ do
+    it "Duplicate..." $ do
+      (dupli [1, 2, 3]) == ([1,1,2,2,3,3])

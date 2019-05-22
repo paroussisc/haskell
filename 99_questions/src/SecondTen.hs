@@ -34,3 +34,8 @@ encodeDirect = map transform . encodePair
     where
       transform(1,x) = Single x
       transform(n,x) = Multiple n x
+
+-- Question 14
+dupli :: (Eq a) => [a] -> [a]
+dupli []     = []
+dupli (x:xs) = x:x:(dupli xs)
