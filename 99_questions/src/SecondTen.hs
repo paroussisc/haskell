@@ -39,3 +39,10 @@ encodeDirect = map transform . encodePair
 dupli :: (Eq a) => [a] -> [a]
 dupli []     = []
 dupli (x:xs) = x:x:(dupli xs)
+
+-- Question 15
+repli :: [a] -> Int -> [a]
+repli [] _     = []
+repli [x] 1    = [x]
+repli [x] n    = x : repli [x] (n-1)
+repli (x:xs) n = x : repli [x] (n-1) ++ (repli xs n)
