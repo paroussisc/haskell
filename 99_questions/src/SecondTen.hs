@@ -46,3 +46,11 @@ repli [] _     = []
 repli [x] 1    = [x]
 repli [x] n    = x : repli [x] (n-1)
 repli (x:xs) n = x : repli [x] (n-1) ++ (repli xs n)
+
+-- Question 16
+dropEvery :: [a] -> Int -> [a]
+dropEvery xs n = snd $ foldl helper (1, []) xs
+    where
+      helper (a,b) x = if a == n
+                     then (1,b)
+                     else (1+a,b++[x])
