@@ -11,3 +11,6 @@ spec = do
   describe "Question 12" $ do
     it "Decode..." $ do
       (decodeModified [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']) == ("aaaabccaadeeee")
+  describe "Question 13" $ do
+    it "Encode directly..." $ do
+      ([Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']) == (encodeDirect "aaaabccaadeeee")
