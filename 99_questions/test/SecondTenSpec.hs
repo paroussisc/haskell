@@ -28,3 +28,7 @@ spec = do
   describe "Question 16" $ do
     it "Drop em..." $ do
       (dropEvery "abcdefghik" 3) == ("abdeghk")
+
+  describe "Question 17" $ do
+    it "Split em..." $ do
+      (split "abcdefghik" 3) == (("abc", "defghik"))

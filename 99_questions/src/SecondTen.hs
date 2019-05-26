@@ -54,3 +54,11 @@ dropEvery xs n = snd $ foldl helper (1, []) xs
       helper (a,b) x = if a == n
                      then (1,b)
                      else (1+a,b++[x])
+
+-- Question 17
+split :: [a] -> Int -> ([a], [a])
+split [] _ = ([],[])
+split whole@(x:xs) n
+    | n > 0 =  (x:ys, zs)
+    | otherwise = ([], whole)
+    where (ys, zs) = split xs (n-1)
