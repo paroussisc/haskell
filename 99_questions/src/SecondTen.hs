@@ -76,3 +76,10 @@ rotate xs n = zs ++ ys
           j | n < 0 = length xs + n
             | n < length(xs) = n
             | otherwise = n  - length xs
+
+
+-- Question 20
+removeAt :: Int -> [a] -> [a]
+removeAt n xs = ys ++ zs
+    where
+       (ys, z:zs) = split xs (n-1)

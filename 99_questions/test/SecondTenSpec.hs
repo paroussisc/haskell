@@ -42,3 +42,7 @@ spec = do
       (rotate ['a','b','c','d','e','f','g','h'] 3) == ("defghabc")
     it "Rotate em back..." $ do
       (rotate ['a','b','c','d','e','f','g','h'] (-2)) == ("ghabcdef")
+
+  describe "Question 20" $ do
+    it "Remove at..." $ do
+      (removeAt 2 "abcd") == ("acd")
