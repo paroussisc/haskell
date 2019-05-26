@@ -68,3 +68,11 @@ slice :: [a] -> Int -> Int -> [a]
 slice xs m n = zs
     where (_, ys) = split xs (m-1)
           (zs, _) = split ys (n-m+1)
+
+-- Question 19
+rotate :: [a] -> Int -> [a]
+rotate xs n = zs ++ ys
+    where (ys, zs) = split xs j
+          j | n < 0 = length xs + n
+            | n < length(xs) = n
+            | otherwise = n  - length xs

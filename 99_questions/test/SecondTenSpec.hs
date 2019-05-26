@@ -36,3 +36,9 @@ spec = do
   describe "Question 18" $ do
     it "Slice em..." $ do
       (slice ['a','b','c','d','e','f','g','h','i','k'] 3 7) == ("cdefg")
+
+  describe "Question 19" $ do
+    it "Rotate em forward..." $ do
+      (rotate ['a','b','c','d','e','f','g','h'] 3) == ("defghabc")
+    it "Rotate em back..." $ do
+      (rotate ['a','b','c','d','e','f','g','h'] (-2)) == ("ghabcdef")
