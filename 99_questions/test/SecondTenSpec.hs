@@ -32,3 +32,7 @@ spec = do
   describe "Question 17" $ do
     it "Split em..." $ do
       (split "abcdefghik" 3) == (("abc", "defghik"))
+
+  describe "Question 18" $ do
+    it "Slice em..." $ do
+      (slice ['a','b','c','d','e','f','g','h','i','k'] 3 7) == ("cdefg")

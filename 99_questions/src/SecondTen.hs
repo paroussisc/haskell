@@ -62,3 +62,9 @@ split whole@(x:xs) n
     | n > 0 =  (x:ys, zs)
     | otherwise = ([], whole)
     where (ys, zs) = split xs (n-1)
+
+-- Question 18
+slice :: [a] -> Int -> Int -> [a]
+slice xs m n = zs
+    where (_, ys) = split xs (m-1)
+          (zs, _) = split ys (n-m+1)
