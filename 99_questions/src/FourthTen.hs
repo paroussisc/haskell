@@ -51,4 +51,4 @@ goldbach   n = head [(x, y) | x <- primes, y <- primes, x + y == n]
 
 -- Question 40
 goldbachList :: Int -> Int -> [(Int, Int)]
-goldbachList   l u = map FourthTen.goldbach [x | x <- [l..u], x `mod` 2 == 0]
+goldbachList   l u = map goldbach [x | x <- [l..u], x `mod` 2 == 0]
