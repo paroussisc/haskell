@@ -21,6 +21,15 @@ spec = do
     it "58" $ do
       (symCbalTrees 5) == ([Branch 'x' (Branch 'x' Empty (Branch 'x' Empty Empty)) (Branch 'x' (Branch 'x' Empty Empty) Empty),Branch 'x' (Branch 'x' (Branch 'x' Empty Empty) Empty) (Branch 'x' Empty (Branch 'x' Empty Empty))])
 
+    it "61" $ do
+      (countLeaves $ head $ cbalTree 4) == (2)
+
+    it "61A" $ do
+      (leaves $ Branch 1 (Branch 2 Empty (Branch 4 Empty Empty))(Branch 2 Empty Empty)) == ([4,2])
+
+    it "62" $ do
+      (internals $ Branch 1 (Branch 2 Empty (Branch 4 Empty Empty))(Branch 2 Empty Empty)) == ([1,2])
+
     it "59" $ do
       (take 4 $ hbalTree 'x' 3) == ([Branch 'x' (Branch 'x' Empty Empty) (Branch 'x' Empty (Branch 'x' Empty Empty)),
                                      Branch 'x' (Branch 'x' Empty Empty) (Branch 'x' (Branch 'x' Empty Empty) Empty),
