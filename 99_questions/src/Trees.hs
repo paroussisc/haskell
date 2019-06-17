@@ -68,13 +68,4 @@ atLevel (Branch v l r) level
       | level > 1 = atLevel l (level-1) ++ atLevel r (level-1)
       | otherwise = []
 
-
--- Question 63
-atLevel :: Tree a -> Int -> [a]
-atLevel (Empty)  _           = []
-atLevel (Branch v l r) level
-      | level == 1 = [v]
-      | level > 1 = atLevel l (level-1) ++ atLevel r (level-1)
-      | otherwise = []
-
 -- Bored of binary trees at this point...
