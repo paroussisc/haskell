@@ -4,6 +4,9 @@ data Tree a = Empty | Branch a (Tree a) (Tree a)
             deriving (Show, Eq)
 leaf x = Branch x Empty Empty
 
+tree4 = Branch 1 (Branch 2 Empty (Branch 4 Empty Empty))
+                 (Branch 2 Empty Empty)
+
 -- Question 55
 cbalTree :: Int -> [Tree Char]
 cbalTree 0 = [Empty]
@@ -56,3 +59,22 @@ internals :: Tree a -> [a]
 internals Empty                  = []
 internals (Branch v Empty Empty) = []
 internals (Branch v l r)         = v : internals l ++ internals r
+
+-- Question 62B
+atLevel :: Tree a -> Int -> [a]
+atLevel (Empty)  _           = []
+atLevel (Branch v l r) level
+      | level == 1 = [v]
+      | level > 1 = atLevel l (level-1) ++ atLevel r (level-1)
+      | otherwise = []
+
+
+-- Question 63
+atLevel :: Tree a -> Int -> [a]
+atLevel (Empty)  _           = []
+atLevel (Branch v l r) level
+      | level == 1 = [v]
+      | level > 1 = atLevel l (level-1) ++ atLevel r (level-1)
+      | otherwise = []
+
+-- Bored of binary trees at this point...

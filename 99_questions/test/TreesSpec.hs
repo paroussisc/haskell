@@ -30,6 +30,9 @@ spec = do
     it "62" $ do
       (internals $ Branch 1 (Branch 2 Empty (Branch 4 Empty Empty))(Branch 2 Empty Empty)) == ([1,2])
 
+    it "62B" $ do
+      (atLevel tree4 2) == ([2,2])
+
     it "59" $ do
       (take 4 $ hbalTree 'x' 3) == ([Branch 'x' (Branch 'x' Empty Empty) (Branch 'x' Empty (Branch 'x' Empty Empty)),
                                      Branch 'x' (Branch 'x' Empty Empty) (Branch 'x' (Branch 'x' Empty Empty) Empty),
