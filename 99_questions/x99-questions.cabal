@@ -22,7 +22,8 @@ library
                        FourthTen,
                        LogicCodes,
                        Trees,
-                       Multi
+                       Multi,
+                       Misc
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.9 && <4.10
